@@ -279,6 +279,7 @@ df['Education_encoded'] = oe.fit_transform(df[['Education']])
 | Simple, memory-efficient (single column, no dimensionality explosion) | If used on **nominal** data with non-tree models, it wrongly implies order/magnitude relationships between categories |
 | Preserves natural order for ordinal data, helping the model learn rank-based patterns | Ordinal encoding requires **domain knowledge** to correctly define the order |
 
+- **Why do tree-based machine learning models work well with Label Encoded nominal features, even though the encoding introduces an arbitrary numerical order?**
 
 <img width="699" height="675" alt="image" src="https://github.com/user-attachments/assets/161e2dc7-4945-4186-bc55-9f6f3b0a58ed" />
 
