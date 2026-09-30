@@ -17,6 +17,13 @@ https://www.interviewquery.com/  ml interview
 
 
 
+
+
+claude connectors
+
+https://lnkd.in/p/gGH2iZXB
+
+
 # LLM API Calling Methods — Python Notes
 
 There are several common ways to call an LLM from Python. The main ones are:
