@@ -188,6 +188,7 @@ print(result.get(timeout=10)) # 5
 ```
 
 **The key idea:** `add(2, 3)` runs the function right here, right now. `add.delay(2, 3)` only sends a message; the worker runs it later, probably in a different process or on a different machine.
+<img width="852" height="547" alt="image" src="https://github.com/user-attachments/assets/a986fba4-2282-4147-9882-bdf9711e500e" />
 
 ---
 
