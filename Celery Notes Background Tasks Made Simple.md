@@ -33,6 +33,8 @@ Suppose a user clicks **Generate Report** and your web app does all the work ins
 
 **Celery** is that something else: an asynchronous, distributed **task queue**. It runs units of work outside the request/response cycle, on one machine or on hundreds.
 
+<img width="806" height="430" alt="image" src="https://github.com/user-attachments/assets/473056a2-a843-43c7-a179-34641f5e8cdd" />
+
 | Typical Celery jobs | Why they should not block a request |
 | --- | --- |
 | Sending emails and SMS | Slow third-party APIs |
@@ -65,6 +67,9 @@ Keep this picture in mind. Every later section is a variation on it: more chefs,
 ## 3. Core Components
 
 Celery has four building blocks.
+
+<img width="905" height="472" alt="image" src="https://github.com/user-attachments/assets/a2844f26-0517-41da-be3e-a62730e18c3a" />
+
 
 &#91;embedded content: architecture · 4 components + scheduler\]
 
@@ -234,6 +239,9 @@ Tasks can be combined. First, wrap a call in a **signature** (`.s()`), which is 
 | **group** | Runs tasks in parallel | `group(resize.s(img) for img in images)` |
 | **chord** | A group, then one callback after **all** finish | `chord(group(...))(summary.s())` |
 
+<img width="812" height="393" alt="image" src="https://github.com/user-attachments/assets/f8e90a3d-f223-4aaa-92a3-7a5ed3a91276" />
+
+
 ```python
 from celery import chain, group, chord
 
@@ -288,6 +296,8 @@ Total processes = 1 manager + concurrency (child workers)
 
 So `--concurrency=4` gives **5 processes**: 1 manager and 4 children that actually run tasks. When you count RAM or look at `ps`, remember the extra one.
 
+<img width="885" height="386" alt="image" src="https://github.com/user-attachments/assets/cbac2fa1-79e7-4bd1-a3b1-4bea57e6fe49" />
+
 **Execution pools**
 
 | Pool | How it works | Best for |
@@ -334,6 +344,9 @@ app.conf.task_routes = {
     'tasks.render_video':        {'queue': 'heavy'},
 }
 ```
+
+<img width="845" height="370" alt="image" src="https://github.com/user-attachments/assets/de72885f-e661-4065-90df-d80c9d410478" />
+
 
 Then start different workers for different queues, each tuned for its job:
 
