@@ -1,7 +1,7 @@
 # Celery Notes: Background Tasks Made Simple
 
 *Python distributed task queue. Examples use Celery 5.x with Redis as the broker.*
-
+direct link https://claude.ai/code/artifact/e2e49015-5200-40f3-828b-ac15878638b6#99f0d2b2-f79d
 ## Contents
 
 - [1. Why Celery Exists](#md2vahe99kj.125)
